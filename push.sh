@@ -8,13 +8,13 @@ for f in */*; do
 		N=$(basename $i)
 		if [ "${N: -4}" == ".jpg" ]; 
 		then
-			DOWNLOADS+=(\"$N\")
+			DOWNLOADS+=($N)
 			STRING=$STRING"\"img\":\"$N\"," #image
 		elif [[ $N != *.* ]];  #weather icon
 		then
-			DOWNLOADS+=(\"$N/weatherIcon\")
+			DOWNLOADS+=($N/weatherIcon)
 		else
-			DOWNLOADS+=(\"$N\")
+			DOWNLOADS+=($N)
 		fi
 	done
 	STRING=$STRING"\"downloads\":\"["
