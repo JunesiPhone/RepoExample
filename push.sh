@@ -12,7 +12,7 @@ for f in */*; do
 			STRING=$STRING"\"img\":\"$N\"," #image
 		elif [[ $N != *.* ]];  #weather icon
 		then
-			DOWNLOADS+=($N/weatherIcon)
+			DOWNLOADS+=($N/weathericons)
 		else
 			DOWNLOADS+=($N)
 		fi
