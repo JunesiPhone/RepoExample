@@ -30,7 +30,7 @@ for f in */*; do
 	done
 	STRING=$STRING"]\"},"
 done
-STRING=$STRING"}"
+STRING=$STRING"}}"
 echo $STRING > themes.json
 
 git add .
