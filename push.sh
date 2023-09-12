@@ -6,11 +6,11 @@ for f in */*; do
 	STRING=$STRING"\"$(basename $f)\":{"
 	for i in $f/*; do
 		N=$(basename $i)
-		if [ "${N: -4}" == ".jpg" ]; 
+		if [[ $(basename $f).jpg == $N ]] #if ThemeName.jpg = ThemeName.jpg
 		then
 			DOWNLOADS+=($N)
 			STRING=$STRING"\"img\":\"$N\"," #image
-		elif [[ $N != *.* ]];  #weather icon
+		elif [[ $N != *.* ]]; #if doesn't contain an extention looking for .
 		then
 			DOWNLOADS+=($N/weathericons)
 		else
