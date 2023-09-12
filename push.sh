@@ -18,8 +18,15 @@ for f in */*; do
 		fi
 	done
 	STRING=$STRING"\"downloads\":["
+	pos=$(( ${#DOWNLOADS[*]} - 1 ))
+	last=${DOWNLOADS[$pos]}
 	for d in "${DOWNLOADS[@]}"; do
-		STRING=$STRING$d,
+		if [[ $d == $last ]]
+		then
+		     STRING=$STRING$d
+		else 
+			STRING=$STRING$d,
+		fi
 	done
 	STRING=$STRING"]},"
 done
