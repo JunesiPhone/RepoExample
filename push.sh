@@ -17,7 +17,7 @@ for f in */*; do
 			DOWNLOADS+=(\"$N\")
 		fi
 	done
-	STRING=$STRING"\"downloads\":["
+	STRING=$STRING"\"downloads\":\"["
 	pos=$(( ${#DOWNLOADS[*]} - 1 ))
 	last=${DOWNLOADS[$pos]}
 	for d in "${DOWNLOADS[@]}"; do
@@ -28,7 +28,7 @@ for f in */*; do
 			STRING=$STRING$d,
 		fi
 	done
-	STRING=$STRING"]},"
+	STRING=$STRING"]\"},"
 done
 STRING=$STRING"}"
 echo $STRING > themes.json
